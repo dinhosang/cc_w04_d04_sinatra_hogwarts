@@ -2,6 +2,6 @@
 <% for student in @students %>
 <p>Student Name: <%= student.pretty_name() %></p>
 <p>Student Age: <%= student.age() %></p>
-<p>Student House: <%= student.house() %></p>
+<p>Student House: <%= student.house().name %></p>
 <hr/>
 <% end %>
