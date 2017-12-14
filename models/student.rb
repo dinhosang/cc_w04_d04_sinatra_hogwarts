@@ -60,6 +60,10 @@ class Student
     sql = "SELECT * FROM students"
     student_hashes = SqlRunner.run(sql)
     students_array = student_hashes.map do |student_hash|
+
+      house_id = student_hash['house']
+      house = House.find(house_id)
+      student_hash['house'] = house.name
       Student.new(student_hash)
     end
     return students_array
