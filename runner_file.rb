@@ -11,6 +11,8 @@ house2 = House.find(2)
 house4 = House.find(4)
 houses = House.find_all
 
+house = student3.house
+
 binding.pry
 
 nil

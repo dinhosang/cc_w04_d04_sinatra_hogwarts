@@ -1,8 +1,10 @@
 require_relative('../db/sqlrunner')
+require_relative('house')
+require('pry-byebug')
 
 class Student
 
-  attr_reader :age, :house, :id
+  attr_reader :age, :id
 
   def initialize( options_hash )
     @id = options_hash['id'].to_i if options_hash['id']
@@ -23,9 +25,22 @@ class Student
     @id = id_hash["id"].to_i
   end
 
+
+  def house()
+    sql = "
+          SELECT * FROM houses
+          WHERE name = $1
+          "
+    house_hash = SqlRunner.run(sql, [@house]).first
+    house = House.new(house_hash)
+    return house
+  end
+
+
   def pretty_name()
     return "#{@first_name} #{@second_name}"
   end
+
 
   def Student.find(id)
     sql = "
