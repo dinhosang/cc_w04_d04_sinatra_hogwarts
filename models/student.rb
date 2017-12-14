@@ -2,7 +2,7 @@ require_relative('../db/sqlrunner')
 
 class Student
 
-  attr_reader :age, :house
+  attr_reader :age, :house, :id
 
   def initialize( options_hash )
     @id = options_hash['id'].to_i if options_hash['id']
