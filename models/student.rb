@@ -51,6 +51,9 @@ class Student
           WHERE id = $1;
           "
     student_hash = SqlRunner.run(sql, [id]).first
+    house_id = student_hash['house']
+    house_name = House.find(house_id).name
+    student_hash['house'] = house_name
     student = Student.new(student_hash)
     return student
   end
