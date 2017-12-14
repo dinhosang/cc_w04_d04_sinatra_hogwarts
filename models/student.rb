@@ -10,6 +10,7 @@ class Student
     @age = options_hash['age'].to_i
   end
 
+
   def save()
     sql = "INSERT INTO students
           (first_name, second_name, house, age)
@@ -18,6 +19,27 @@ class Student
     values = [@first_name, @second_name, @house, @age]
     id_hash = SqlRunner.run(sql, values).first()
     @id = id_hash["id"].to_i
+  end
+
+
+  def Student.find(id)
+    sql = "
+          SELECT * FROM students
+          WHERE id = $1;
+          "
+    student_hash = SqlRunner.run(sql, [id]).first
+    student = Student.new(student_hash)
+    return student
+  end
+
+
+  def self.find_all()
+    sql = "SELECT * FROM students"
+    student_hashes = SqlRunner.run(sql)
+    students_array = student_hashes.map do |student_hash|
+      Student.new(student_hash)
+    end
+    return students_array
   end
 
 
