@@ -2,6 +2,8 @@ require_relative('../db/sqlrunner')
 
 class Student
 
+  attr_reader :age, :house
+
   def initialize( options_hash )
     @id = options_hash['id'].to_i if options_hash['id']
     @first_name = options_hash['first_name']
@@ -21,6 +23,9 @@ class Student
     @id = id_hash["id"].to_i
   end
 
+  def pretty_name()
+    return "#{@first_name} #{@second_name}"
+  end
 
   def Student.find(id)
     sql = "

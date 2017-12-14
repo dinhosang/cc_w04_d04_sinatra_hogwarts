@@ -1,0 +1,7 @@
+<h2>Student Registry: </h2>
+<% for student in @students %>
+<p>Student Name: <%= student.pretty_name() %></p>
+<p>Student Age: <%= student.age() %></p>
+<p>Student House: <%= student.house() %></p>
+<hr/>
+<% end %>
