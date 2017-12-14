@@ -1,7 +1,6 @@
 require('sinatra')
 require('sinatra/contrib/all')
 require_relative('models/student')
-require('pry-byebug')
 
 get ('/students') do
   @students = Student.find_all()

@@ -29,17 +29,17 @@ student4 = Student.new({
   "house" => "Ravenclaw"
   })
 
-  house1 = House.new({"name" => "Gryffindor", "logo" =>"/public/crests/Gryffindor.png"})
-  house2 = House.new({"name" => "Hufflepuff", "logo" =>"/public/crests/Hufflepuff.png"})
-  house3 = House.new({"name" => "Ravenclaw", "logo" =>"/public/crests/Ravenclaw.png"})
-  house4 = House.new({"name" => "Slytherin", "logo" =>"/public/crests/Slytherin.png"})
-
-  student1.save()
-  student2.save()
-  student3.save()
-  student4.save()
+  house1 = House.new({"name" => "Gryffindor", "logo" =>"/crests/Gryffindor.png"})
+  house2 = House.new({"name" => "Hufflepuff", "logo" =>"/crests/Hufflepuff.png"})
+  house3 = House.new({"name" => "Ravenclaw", "logo" =>"/crests/Ravenclaw.png"})
+  house4 = House.new({"name" => "Slytherin", "logo" =>"/crests/Slytherin.png"})
 
   house1.save()
   house2.save()
   house3.save()
   house4.save()
+
+  student1.save()
+  student2.save()
+  student3.save()
+  student4.save()

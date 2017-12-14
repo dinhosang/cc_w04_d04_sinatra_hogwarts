@@ -16,11 +16,14 @@ class Student
 
 
   def save()
+    house_object = house()
+    house_id = house_object.id
+
     sql = "INSERT INTO students
           (first_name, second_name, house, age)
           VALUES ($1, $2, $3, $4)
           RETURNING id;"
-    values = [@first_name, @second_name, @house, @age]
+    values = [@first_name, @second_name, house_id, @age]
     id_hash = SqlRunner.run(sql, values).first()
     @id = id_hash["id"].to_i
   end

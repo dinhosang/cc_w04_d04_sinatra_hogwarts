@@ -1,0 +1,28 @@
+header {
+  background-image: url("crests/Hogwarts.png");
+  background-size:contain;
+}
+
+
+h1 {
+  border: solid;
+  width: 40%;
+  margin: 10px auto;
+  text-align: center;
+  background-color: #FFF;
+}
+
+nav ul {
+  border: solid;
+  background-color: #FFF; 
+  border-width: 2px;
+  display: flex;
+  width: 40%;
+  margin: auto;
+}
+
+li {
+  width: 50%;
+  display: inline;
+  margin: auto;
+}
